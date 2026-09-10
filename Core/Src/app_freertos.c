@@ -139,7 +139,7 @@ void MX_FREERTOS_Init(void) {
   osThreadDef(Buzzer, Buzzer_Task, osPriorityIdle, 0, 256);
   BuzzerHandle = osThreadCreate(osThread(Buzzer), NULL);
 
-//  /* definition and creation of UI */
+  /* definition and creation of UI */
   osThreadDef(UI, UI_Task, osPriorityIdle, 0, 256);
   UIHandle = osThreadCreate(osThread(UI), NULL);
 

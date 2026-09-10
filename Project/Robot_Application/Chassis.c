@@ -141,7 +141,7 @@ void Chassis_Task(void *argument)
             Chassis_Control_Struct.Power_MAX = Robo_State.chassis_power_limit - 5.0f * (45.0f - Robo_PowerHeatData.buffer_energy);
         }
 		if(Chassis_Control_Struct.Power_MAX<0)Chassis_Control_Struct.Power_MAX=0;
-        Power_Limit(&Chassis_Control_Struct, &Motor, Chassis_Control_Struct.Power_MAX);
+        Power_Limit(&Chassis_Control_Struct, &Motor.Chassis1, Chassis_Control_Struct.Power_MAX);
         
 //        /*===| 功率控制 |===*/
 //        buffer_energy_weight=Robo_State.chassis_power_limit/(buffer_energy_linear-buffer_energy_surplus);

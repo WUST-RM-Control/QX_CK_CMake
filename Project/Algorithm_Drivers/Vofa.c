@@ -1,4 +1,4 @@
-#include "VOFA.h"
+#include "Vofa.h"
 #include "RoboControl.h"
 
 extern float Shoot_Fric_First_Left_Speed   ;

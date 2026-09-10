@@ -51,16 +51,16 @@ extern "C" {
 #include "usb_device.h"
 #include "gpio.h"
 
-#include "define.h"
+#include "Define.h"
 #include "PID.h"
 #include "CAN_Driver.h"
 #include "USART_Driver.h"
 #include "USB_Driver.h"
 #include "Function.h"
 #include "DWT.h"
-#include "crc8_crc16.h"
+#include "CRC8_CRC16.h"
 #include "Motor_Driver.h"
-#include "flash.h"
+#include "Flash.h"
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/

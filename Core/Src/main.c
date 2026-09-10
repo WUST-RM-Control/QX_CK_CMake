@@ -34,7 +34,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "bmi088driver.h"
+#include "BMI088driver.h"
 #include "CAN_Driver.h"
 #include "USART_Driver.h"
 #include "Buzzer.h"

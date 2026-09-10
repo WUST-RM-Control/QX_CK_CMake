@@ -1,0 +1,9 @@
+# CMake build output
+/build/
+
+# FetchContent downloads / checkouts
+/.deps/
+
+# Editor / IDE
+.vscode/
+*.swp
