@@ -27,7 +27,7 @@ PID_Struct_TypeDef RoboGimbal_Wz_PID_Struct;
 
 /*==| 电机Pitch绝对角度限位 |==*/
 #define Pitch_Angle_Limit_Max -41
-#define Pitch_Angle_Limit_Min -4.5
+#define Pitch_Angle_Limit_Min -8.5
 
 // /*===| 自定义控制器数据 |===*/
 // typedef __PACKED_STRUCT

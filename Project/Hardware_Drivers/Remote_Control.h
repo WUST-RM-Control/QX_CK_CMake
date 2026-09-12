@@ -78,61 +78,8 @@ typedef __packed struct
     uint16_t crc16;
 }remote_rawdata_t;
 
-typedef __packed struct
-{
-    int8_t Right_X_x100;
-    int8_t Right_Y_x100;
-    int8_t Left_X_x100;
-    int8_t Left_Y_x100;
-    int8_t Wheel_x100;
-    uint8_t If_Remote_Connect:1;
-    uint8_t Mode:2;
-    uint8_t Pause:1;
-    uint8_t Custom_L:1;
-    uint8_t Custom_R:1;
-    uint8_t Trigger:1;
-    uint8_t null1:1;
-    uint8_t null2;
-} Remote_CAN_Data_Joystic_TypedefStruct;
-
-typedef __packed struct
-{
-    int16_t  Mouse_Vx;
-    int16_t  Mouse_Vy;
-    int8_t  Mouse_Vz_x100;
-    uint8_t Mouse_L:1;
-    uint8_t Mouse_M:1;
-    uint8_t Mouse_R:1;
-    uint8_t null1:5;
-    uint8_t Keyboard_W:1;
-    uint8_t Keyboard_A:1;
-    uint8_t Keyboard_S:1;
-    uint8_t Keyboard_D:1;
-    uint8_t Keyboard_Q:1;
-    uint8_t Keyboard_E:1;
-    uint8_t Keyboard_Shift:1;
-    uint8_t Keyboard_Ctrl:1;
-    uint8_t Keyboard_R:1;
-    uint8_t Keyboard_F:1;
-    uint8_t Keyboard_G:1;
-    uint8_t Keyboard_Z:1;
-    uint8_t Keyboard_X:1;
-    uint8_t Keyboard_C:1;
-    uint8_t Keyboard_V:1;
-    uint8_t Keyboard_B:1;
-} Remote_CAN_Data_KeyboardMouse_TypedefStruct;
-
 extern Remote_StructTypeDef Remote;
 extern Remote_StructTypeDef Remote_Last;
-
-//通过CAN转发遥控器数据
-void Remote_CAN_SendData_Joystic(FDCAN_HandleTypeDef *hfdcan, uint16_t CAN_ID);
-//通过CAN转发键鼠数据
-void Remote_CAN_SendData_KeyboardMouse(FDCAN_HandleTypeDef *hfdcan, uint16_t CAN_ID);
-//通过CAN接收遥控器数据
-void Remote_CAN_ReceiveData_Joystic(uint8_t *RxData);
-//通过CAN接收键鼠数据
-void Remote_CAN_ReceiveData_KeyboardMouse(uint8_t *RxData);
 
 void Remote_Rx_CallBack(uint8_t *Remote_Control_RxDataBuff);
 void Remote_Save_Last_Data(void);

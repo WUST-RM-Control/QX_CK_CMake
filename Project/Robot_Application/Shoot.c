@@ -33,7 +33,8 @@ void Shoot_Task(void *argument)
     PID_Init(&Shoot_Control_Struct.Trigger_Angle_PID_Struct,        10,  0, 200, 0, 0,   500);
     PID_Init(&Shoot_Control_Struct.Trigger_Single_Speed_PID_Struct,        300,  5, 0, 30, 16000,   12000);
     
-    Shoot_Control_Struct.Shoot_Frequency = Shoot_Frequency_Max;
+    // Shoot_Control_Struct.Shoot_Frequency = Shoot_Frequency_Max;
+    Shoot_Control_Struct.Shoot_Frequency = 5;
     for(;;)
     {     
         Shoot_Dt = DWT_GetDeltaT(&Shoot_Control_Struct.DWT_Count);
@@ -45,11 +46,11 @@ void Shoot_Task(void *argument)
         Shoot_Control_Struct.Shoot_State = RoboControl_Struct.Shoot_State;
         
         /*===| 热量限制 |===*/
-        Heat_Limit();
+        // Heat_Limit();
         // //热量线性映射到射击频率
         // Shoot_Heat_To_Frequency();
         /*===| 摩擦轮堵弹检测与处理 |===*/
-//        Fric_Stuck_Handle();    
+        Fric_Stuck_Handle();
         
         /*===| 根据发射状态控制摩擦轮和拨弹轮 |===*/
             /*===| 发射机构关闭 |===*/

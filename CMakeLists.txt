@@ -87,6 +87,7 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     # Hardware_Drivers
     Project/Hardware_Drivers/Referee_Unpack.c
     Project/Hardware_Drivers/Remote_Control.c
+    Project/Hardware_Drivers/Remote_FS6X.c
     Project/Hardware_Drivers/SuperCap_Driver.c
     Project/Hardware_Drivers/Motor_Driver.c
     Project/Hardware_Drivers/Motor_DJI_Driver.c

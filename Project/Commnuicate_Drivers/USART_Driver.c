@@ -11,6 +11,7 @@
 #include "Vofa.h"
 #include "Remote_Control.h"
 #include "Referee_Unpack.h"
+#include "Remote_FS6X.h"
 
 uint8_t RS485_1_RX_Data[64]     = {0};
 uint8_t RS485_2_RX_Data[64]     = {0};
@@ -51,7 +52,8 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
 	}
     else if(huart == SBUS_UART)
 	{
-        
+        /* FS6X 遥控器 SBUS 数据解包 */
+        Remote_Control_GetData(SBUS_RX_Data);
 		HAL_UARTEx_ReceiveToIdle_DMA(SBUS_UART, SBUS_RX_Data, 64);
         __HAL_DMA_DISABLE_IT(SBUS_UART_DMA, DMA_IT_HT);
 	}

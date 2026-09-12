@@ -52,8 +52,6 @@ void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
 		
         /*===| IMU数据 |===*/  
         else if (hfdcan == &IMU_CAN             && CAN_RX_ID == IMU_FeedBack_CAN_ID)             INS_Get_Data_Call_Back(CAN_RX_Data1);
-        else if (hfdcan == &Remote_CAN          && CAN_RX_ID == Remote_CAN_Joystic_CAN_ID)       Remote_CAN_ReceiveData_Joystic(CAN_RX_Data1);
-        else if (hfdcan == &Remote_CAN          && CAN_RX_ID == Remote_CAN_KeyboardMouse_CAN_ID) Remote_CAN_ReceiveData_KeyboardMouse(CAN_RX_Data1);
 }
 
 //CAN-发送标准帧(FDCAN, CANID，发送数据数组（八字节））

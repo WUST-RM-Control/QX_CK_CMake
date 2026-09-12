@@ -23,9 +23,9 @@ void Gimbal_Task(void *argument)
 {
     /*===| 云台PID参数初始化 |===*/
     PID_Init(&Gimbal_Control_Struct.Yaw_Angle_PID_Struct,   20,   0,    550,   0,    0,   150);
-    PID_Init(&Gimbal_Control_Struct.Yaw_Speed_PID_Struct,   10,   1,  0,  65 , 1000, 16384);
+    PID_Init(&Gimbal_Control_Struct.Yaw_Speed_PID_Struct,   10,   1,  0,  30 , 1000, 16384);
     PID_Init(&Gimbal_Control_Struct.Pitch_Angle_PID_Struct,  5,   0,    200,   0,    0,   100);
-    PID_Init(&Gimbal_Control_Struct.Pitch_Speed_PID_Struct, 400,   3,    0,   250, 4000, 16384);
+    PID_Init(&Gimbal_Control_Struct.Pitch_Speed_PID_Struct, 100,   0,    0,   0, 4000, 16384);
 
 //    Motor_Compensation_Task();
     
